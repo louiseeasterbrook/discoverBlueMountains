@@ -1,0 +1,356 @@
+body {
+  background-color: white;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  font-family: "Titillium Web", sans-serif;
+  min-width: 330px;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 0;
+  padding-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.section-hide {
+  opacity: 0.2;
+  transform: translateY(10rem);
+}
+
+.slide-in {
+  transition: 0.3s ease-in-out;
+}
+
+/* ____________________________________________________________________________ */
+/* HEADER */
+nav {
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 11vh;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0px 0px 10px rgba(95, 95, 95, 0.5);
+}
+
+#title {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  font-weight: 600;
+}
+
+#title:hover {
+  color: rgb(107, 107, 107);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: black;
+  font-size: 16px;
+  padding: 15px;
+}
+
+.nav-links a:hover {
+  color: rgb(53, 163, 31);
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+}
+
+/* ______________________________________________________________________ */
+
+/* top vid */
+.open-vid {
+  overflow: hidden;
+  height: 55vh;
+}
+
+#kat-open-vid {
+  margin-top: -18rem;
+}
+
+.open-vid video {
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  z-index: -999;
+}
+
+.overlay {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  animation: open-pop forwards 0.7s;
+}
+
+/* opening button rise animation */
+@keyframes open-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(12em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(17em);
+  }
+}
+
+.overlay-text {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: white;
+  padding: 3rem;
+  font-weight: 600;
+  text-align: center;
+  transition: 0.15s ease-in;
+  text-transform: uppercase;
+}
+
+/* _____________________________________________________________________________________ */
+
+.side-padding {
+  padding-left: 15%;
+  padding-right: 15%;
+  width: 70%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.divider {
+  margin: auto;
+  height: 5px;
+  width: 70%;
+  background-color: #f5f2f2;
+  border-radius: 10px;
+}
+
+/* ____________________________________________________________________________ */
+
+.container {
+  background-color: white;
+}
+
+.section {
+  display: flex;
+  gap: 2rem;
+}
+
+.section-info {
+  width: 100%;
+}
+
+.section-media {
+  width: 100%;
+}
+
+.media-holder {
+  position: relative;
+  display: block;
+}
+
+.media-holder img {
+  width: 100%;
+}
+
+.media-holder video {
+  width: 100%;
+  position: absolute;
+  left: 0;
+}
+
+/* TABS */
+.media-tabs {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+}
+.media-tabs a {
+  cursor: pointer;
+  background-color: #f5f2f2;
+  padding: 0.5rem;
+  width: 50%;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  text-align: center;
+  letter-spacing: 2px;
+  align-self: flex-end;
+}
+
+.media-tabs a:hover {
+  font-weight: 900;
+}
+
+.active-tab {
+  margin-top: 0;
+  color: rgb(53, 163, 31);
+  height: 2rem;
+  width: 47%;
+}
+
+/* class used to hide media (image and video) */
+.hide {
+  opacity: 0;
+}
+
+/* ____________________________________________________________________________ */
+
+footer {
+  background-color: #f5f2f2;
+  height: 200px;
+  width: 100%;
+}
+
+/* ______________________________________________________________________ */
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 1150px) {
+  /* transform sections is columns (from rows) */
+  .section {
+    flex-direction: column;
+  }
+
+  /* display burger menu */
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-backdrop {
+    position: absolute;
+    top: 11vh;
+    height: 89vh;
+    width: 100%;
+    background-color: #f5f2f2;
+    display: none;
+  }
+
+  /* navigation backdrop fade in animation */
+  @keyframes nav-back-fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* JS toggle class - make nav backdrop visible */
+  .show-nav-fade {
+    display: block;
+    animation: nav-back-fade 0.35s forwards;
+  }
+
+  /* restyle navigation links - transform to columns and centre on page */
+  .nav-links {
+    margin-top: 0;
+    padding: 4rem;
+    position: absolute;
+    flex-direction: column;
+    top: 11.5vh;
+    width: 100%;
+    align-items: center;
+    line-height: 3rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: none;
+    opacity: 0;
+  }
+
+  /* JS toggle class - make nav links visible */
+  .show-nav-links {
+    display: flex;
+    animation: link-fade 0.5s forwards 0.2s;
+  }
+
+  /* JS toggle class - links animation  */
+  @keyframes link-fade {
+    0% {
+      opacity: 0;
+      margin-top: 4rem;
+    }
+    100% {
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+}
+/* ______________________________________________________________________ */
+
+@media screen and (max-width: 800px) {
+  /* reposition page title */
+  .overlay-text {
+    transform: translate(-50%, -70%);
+  }
+
+  /* make divider wider */
+  .divider {
+    width: 90%;
+  }
+
+  /* decrease side padding */
+  .side-padding {
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
+}
+/* ______________________________________________________________________ */
+
+@media screen and (max-width: 650px) {
+  /* decrease side padding and increase width of content  */
+  .side-padding {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 90%;
+  }
+
+  /* shrink website heading  */
+  #title {
+    font-size: 1rem;
+  }
+
+  /* resposition title and burger menu  */
+  nav {
+    justify-content: space-evenly;
+  }
+}

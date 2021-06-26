@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styleSheets/suburb-style.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap"
+      rel="stylesheet"
+    />
+    <!-- browser tab icon -->
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+    <title>Discover Blue Mountians</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <!-- page title  -->
+        <a id="title" href="/index.html">Discover Blue Mountains</a>
+
+        <!-- naviagtion backdrop - when page is 650px or less  -->
+        <div class="nav-backdrop"></div>
+
+        <!-- naviagtion links  -->
+        <ul class="nav-links">
+          <li><a href="wentworthFalls.html">Wentworth Falls</a></li>
+          <li><a href="leura.html">Leura</a></li>
+          <li><a href="katoomba.html">Katoomba</a></li>
+          <li><a href="blackheath.html">Blackheath</a></li>
+        </ul>
+
+        <!-- burger menu -->
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line2"></div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- OPENING VIDEO  -->
+    <div class="open-vid">
+      <video autoplay muted loop>
+        <source src="/videos/bhmain.mp4" />
+        <p>this page uses HTML5</p>
+      </video>
+
+      <!--Page heading -->
+      <div class="overlay">
+        <p class="overlay-text">Wentworth Falls</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Section One  -->
+      <div class="section side-padding">
+        <!-- Section one text -->
+        <div class="section-info">
+          <h3>Lincolns Rock Lookout</h3>
+          <p>
+            Lincolns rock is a lookout point in Wentworth falls which looks out
+            into the Jamison Valley in Blue Mountains National Park. The lookout
+            is named after Lincoln Hall, an Australian Mountaineer who was a
+            long time resident of Wentworth Falls.<br /><br />If you venture
+            down below the rock lookout (via a trail located to the left of the
+            lookout) you will be led down to the base of a small elevated cave.
+            This cave can be accessed via a
+            <a id="rc-link">small rock climb</a> and is the perfect spot for a
+            picnic.<br /><br />The lookout does not have banisters so if you are
+            accompanied by children, be aware of the height risk. <br /><br />
+            <b>Distance:</b> 20m from carpark <br /><b>Parking:</b> Car park
+            available<br /><b>Toilet:</b> Not available
+          </p>
+        </div>
+        <!-- section one media -->
+        <div class="section-media" id="s1">
+          <!-- media tabs -->
+          <div class="media-tabs">
+            <a class="tab-btn-s1 active-tab" id="image">Image</a>
+            <a class="tab-btn-s1" id="video">Video</a>
+          </div>
+          <!-- contianer for image and video -->
+          <div class="media-holder">
+            <img src="/images/ww1.jpg" alt="Lincolns Rock View" id="img-s1" />
+            <video
+              class="hide"
+              id="video-s1"
+              poster="/images/ww1.jpg"
+              muted
+              controls
+            >
+              <source src="/videos/ww1v.mp4" />
+              <p>this page uses HTML5</p>
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Section Two  -->
+      <div class="section side-padding">
+        <!-- Section Two text -->
+        <div class="section-info">
+          <h3>Wentworth Falls Track</h3>
+          <p>
+            The Wentworth falls track is a peaceful walk from the Wentworth
+            Falls lookout down to the Falls. The track is well signposted and
+            maintained but is very steep.<br /><br />
+            The track leads to a shallow pool mid-way down the falls, this
+            section of the waterfall sits 100m above the spectacular Jamison
+            Valley which is visible throughout the walk.<br />
+            <br />Once reaching the falls there is the option to turn back and
+            return the way you came or continue on to the National Pass track
+            which leads to some more secluded but equally breathe-taking
+            lookouts.<br /><br />
+            <b>Distance:</b> 1.4km return <br /><b>Parking:</b> Car park
+            available<br /><b>Toilet:</b>
+            Available at the carpark
+          </p>
+        </div>
+        <!-- section Two media -->
+        <div class="section-media" id="s2">
+          <!-- media tabs -->
+          <div class="media-tabs">
+            <a class="tab-btn-s2 active-tab" id="image">Image</a>
+            <a class="tab-btn-s2" id="video">Video</a>
+          </div>
+          <!-- contianer for image and video -->
+          <div class="media-holder">
+            <img src="/images/ww2.jpg" alt="Wentworth Falls" id="img-s2" />
+            <video
+              class="hide"
+              id="video-s2"
+              poster="/images/ww2.jpg"
+              muted
+              controls
+            >
+              <source src="/videos/ww2v.mp4" />
+              <p>this page uses HTML5</p>
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer></footer>
+    <script src="/javascript/suburb-js.js"></script>
+  </body>
+</html>

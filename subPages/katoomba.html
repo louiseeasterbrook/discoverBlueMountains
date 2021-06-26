@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styleSheets/suburb-style.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap"
+      rel="stylesheet"
+    />
+    <!-- browser tab icon -->
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+    <title>Discover Blue Mountians</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <!-- page title  -->
+        <a id="title" href="/index.html">Discover Blue Mountains</a>
+
+        <!-- naviagtion backdrop - when page is 650px or less  -->
+        <div class="nav-backdrop"></div>
+
+        <!-- naviagtion links  -->
+        <ul class="nav-links">
+          <li><a href="wentworthFalls.html">Wentworth Falls</a></li>
+          <li><a href="leura.html">Leura</a></li>
+          <li><a href="katoomba.html">Katoomba</a></li>
+          <li><a href="blackheath.html">Blackheath</a></li>
+        </ul>
+
+        <!-- burger menu -->
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line2"></div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- OPENING VIDEO  -->
+    <div class="open-vid">
+      <video autoplay muted loop id="kat-open-vid">
+        <source src="/videos/katoombamain.mp4" />
+        <p>this page uses HTML5</p>
+      </video>
+
+      <!--Page heading -->
+      <div class="overlay">
+        <p class="overlay-text">Katoomba</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Section One  -->
+      <div class="section side-padding">
+        <!-- Section one text -->
+        <div class="section-info">
+          <h3>Echo Point</h3>
+          <p>
+            Echo Point is the most popular Blue Mountains tourist attraction.
+            The large, multi-layered lookout gives visitors spectacular views of
+            the Jamison Valley. The most notable feature in the view is the rock
+            formation, known as the three sisters. The three sisters get their
+            name from the Aboriginal Dream-Time legend that tells a story of
+            three sisters that fell in love with 3 brothers from a different
+            tribe.<br /><br />This lookout is a hub for outdoor activities in
+            Katoomba or can be the perfect spot for a meal at the nearby
+            restaurant. Many popular walks start from echo point, including; the
+            Three sisters walk, Prince Henry Cliff Walk, or the Giant
+            Stariway.<br /><br />
+            <b>Distance:</b> 50m from carpark<br /><b>Parking:</b> Car park and
+            street parking available<br /><b>Toilet:</b>
+            Available
+          </p>
+        </div>
+
+        <!-- section one media -->
+        <div class="section-media" id="s1">
+          <!-- media tabs -->
+          <div class="media-tabs">
+            <a class="tab-btn-s1 active-tab" id="image">Image</a>
+            <a class="tab-btn-s1" id="video">Video</a>
+          </div>
+          <!-- contianer for image and video -->
+          <div class="media-holder">
+            <img
+              src="/images/k1.jpg"
+              alt="Echo Point Lookout View"
+              id="img-s1"
+            />
+            <video
+              class="hide"
+              id="video-s1"
+              poster="/images/k1.jpg"
+              muted
+              controls
+            >
+              <source src="/videos/k1v.mp4" />
+              <p>this page uses HTML5</p>
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Section Two  -->
+      <div class="section side-padding">
+        <!-- Section Two text -->
+        <div class="section-info">
+          <h3>Scenic World</h3>
+          <p>
+            Scenic world is a Blue Mountains hub for incredible views, exciting
+            activities and education. The highlight of a scenic world visit is
+            the Scenic Railway. The Scenic railway is the worlds steepest
+            railway that transports visitors from the clifftop down 312m into
+            the valley. This experience is for people who like the thrill of
+            speed and heights.The railway transports visitors to the scenic
+            walkway, which will give visitors a chance to walk amongst the
+            extraordinary temperate rainforest and learn about the early
+            practices of coal mining that took place in the area.<br /><br />Scenic
+            world also offers a skyway with a glass floor to maximise the scenic
+            views in all directions. The skyway is 270 metres above ground and
+            travels 720m across the valley in just a couple of minutes.<br /><br />
+            <b>Parking:</b> Car park available<br /><b>Toilet:</b> Available
+          </p>
+        </div>
+
+        <!-- section Two media -->
+        <div class="section-media" id="s2">
+          <!-- media tabs -->
+          <div class="media-tabs">
+            <a class="tab-btn-s2 active-tab" id="image">Image</a>
+            <a class="tab-btn-s2" id="video">Video</a>
+          </div>
+          <!-- contianer for image and video -->
+          <div class="media-holder">
+            <img src="/images/k2.jpg" alt="Scenic World Entry" id="img-s2" />
+            <video
+              class="hide"
+              id="video-s2"
+              poster="/images/k2.jpg"
+              muted
+              controls
+            >
+              <source src="/videos/k2v.mp4" />
+              <p>this page uses HTML5</p>
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer></footer>
+    <script src="/javascript/suburb-js.js"></script>
+  </body>
+</html>

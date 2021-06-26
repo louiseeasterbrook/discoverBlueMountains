@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleSheets/main-style.css">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    <!-- browser tab icon -->
+    <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <title>Discover Blue Mountians</title>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a id="title" href="index.html">Discover Blue Mountains</a>
+          
+      <div class="nav-backdrop"></div>
+      <ul class="nav-links">
+        <li><a  href="subpages/wentworthFalls.html">Wentworth Falls</a></li>
+        <li><a  href="subpages/leura.html">Leura</a></li>
+        <li><a  href="subpages/katoomba.html">Katoomba</a></li>
+        <li><a  href="subpages/blackheath.html">Blackheath</a></li>
+      </ul>
+  
+      <!-- burger menu -->
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line2"></div>
+      </div>
+    </nav>
+  </header>
+
+
+
+  <!-- OPENING VIDEO  -->
+  <div class="open-vid">
+    <video autoplay muted loop>
+      <source src="videos/website.mov" />
+      <p>this page uses HTML5</p>
+    </video>
+    
+    <!-- opening page text -->
+    <div class="overlay">
+      <a class="overlay-text" href="#">Find out more about the Blue Mountain's National Park</a>
+    </div>
+        
+    <!-- page arrows  -->
+    <div class="arrows">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+
+  <!-- WELCOME -->
+  <div class="section1 side-padding" id="welcomeid">
+    <div class="section">
+      <h3>What are the Blue Mountains?</h3>
+        <p>
+          The Blue Mountains National Park is an area of nearly 270,000
+          hectares that is comprised of tall cliffs and deep canyons within
+          the Australian Bush. The National Park is a tourist hub in
+          Australia, providing activities for people of all ages and
+          abilities.
+        </p>
+        <br>
+        <p>
+          Choose from the Blue Mountains suburbs: Wentworth Falls, Leura,
+          Katoomba and Blackheath in the menu bar to see the main attractions.
+        </p>
+    </div>
+  </div>
+
+  <!-- ATTRACTIONS -->
+  <div class="section2 side-padding">
+    <div class="section">      
+      <h3>Attractions</h3>
+     
+      <!-- attractions tabs -->
+      <div class="att-tabs-container">
+        <a class="att-tab active-tab" data-tab="1">Bushwalks</a>
+        <a class="att-tab" data-tab="2">Lookouts<a>
+        <a class="att-tab" data-tab="3">Waterfalls</a>
+      </div>
+        
+      <!-- Container for all attractions (bushwalk, lookouts, waterfalls) -->
+      <div class="att-content">
+
+        <!-- bushwalk container -->
+        <div class="bushwalk att-info att-1 active-content">
+            <!-- bushwalk image -->
+            <div class="att-img-cont">
+              <img src="images/attractions1.jpg" alt="Grand Canyon Walking Track"/>
+            </div>
+            <!-- bushwalk text -->
+            <div class="att-text-cont">
+              <h4>Bush Walks</h4>
+              <p>
+                The Blue Mountains is home to some of Australia's most
+                picturesque bushwalks through the Australian bush. Each bush
+                walk varies in length and difficulty, meaning there is a walk
+                for people of all abilities.
+              </p>
+            </div>
+        </div>
+        
+        <!-- lookout container -->
+        <div class="lookout att-info att-2 not-active">
+          <!-- lookout image -->
+          <div class="att-img-cont">
+            <img src="images/k1.jpg" alt="Echo Point Lookout" />
+          </div>
+           <!-- lookout text -->
+          <div class="att-text-cont">
+            <h4>Lookouts</h4>
+            <p>
+              Each lookout in the Blue Mountains allows visitors to peer
+              into the beautiful National park landscape. The lookout
+              invites visitors to view the sandstone cliffs and deep canyons
+              that have been created by waterways over thousands of years.
+            </p>
+          </div>
+        </div>
+
+        <!-- waterfalls container -->
+        <div class="waterfalls att-info att-3 not-active">
+          <!-- waterfalls image -->
+          <div class="att-img-cont">
+            <img src="images/ww2.jpg" alt="Wentworth Falls" />
+          </div>
+          <!-- waterfalls text -->              
+          <div class="att-text-cont">
+            <h4>Waterfalls</h4>
+            <p>
+              Waterfalls are found all around the Blue Mountains. Many
+              waterfalls make great picnic or swimming spots for visitors to
+              get the full Blue Mountain experience.
+            </p>
+          </div>
+        </div>
+
+      </div>        
+    </div>
+  </div>
+
+  <!-- WHAT TO BRING -->
+   <div class="section3 side-padding">
+      <div class="wtb-holder section">
+        <!-- text "What to Bring" section -->
+        <div class="wtb-text">
+          <h3>What to Bring</h3>
+          <p>
+            The Blue Mountains is home to the full range of weather conditions
+            that can change very quickly throughout the day. In summer it can
+            reach above thirty degrees and in winter it can drop down below
+            zero degrees. The type of activities visitors engage in can lead
+            them into secluded locations without access to water or
+            shelter.
+            <br/>
+            <br/>
+            To best prepare for your trip to the Blue
+            Mountains, remember to bring:
+          </p>
+
+          <ul>
+            <li><p>Water Bottle (1 litre minimum)</p></li>
+            <li><p>Rain protection</p></li>
+            <li><p>Warm Jacket (Even in summer)</p></li>
+            <li><p>Sun Protection (hat, sunscreen)</p></li>
+          </ul>
+        </div>
+
+        <div class="wtb-photo">
+          <!-- Slideshow photo container-->
+          <div class="holdPhotos">
+            <img src="images/slideshow0.jpg" alt="Blue Mountains Landscape" class="slideShowImage showPhoto" id="ssImage1" >
+            <img src="images/slideshow3.jpg" alt="Blue Mountains Landscape" class="slideShowImage" id="ssImage2">
+          </div> 
+          <!-- slideshow dot holder -->
+          <div class="dotHolder"></div>            
+        </div>
+
+      </div>         
+    </div>
+    
+    <footer></footer>
+
+    <script src="javascript/main-js.js"></script>
+</body>
+</html>

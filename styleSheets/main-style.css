@@ -1,0 +1,497 @@
+body {
+  background-color: white;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  font-family: "Titillium Web", sans-serif;
+  min-width: 330px;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 0;
+  padding-bottom: 1.5rem;
+}
+h4 {
+  font-size: 1.2rem;
+  margin: 0;
+  padding-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+a {
+  font-size: 1rem;
+}
+
+/* class given to each section before they are 'scrolled to' */
+.section-hide {
+  opacity: 0.2;
+  transform: translateY(10rem);
+}
+
+/* class given to each section to make scroll transition smooth  */
+.slide-in {
+  transition: 0.3s ease-in-out;
+}
+
+/* ____________________________________________________________________________ */
+
+nav {
+  top: 0;
+  left: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 11vh;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0px 0px 10px rgba(95, 95, 95, 0.5);
+  -webkit-box-shadow: 0px 0px 10px rgba(95, 95, 95, 0.5);
+  -moz-box-shadow: 0px 0px 10px rgba(95, 95, 95, 0.5);
+}
+
+#title {
+  text-decoration: none;
+  color: black;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  font-weight: 600;
+}
+
+#title:hover {
+  color: rgb(107, 107, 107);
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  letter-spacing: 1px;
+  color: black;
+  font-size: 16px;
+  padding: 15px;
+}
+
+.nav-links a:hover {
+  color: rgb(53, 163, 31);
+}
+
+.burger {
+  display: none;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 5px;
+}
+
+/* ______________________________________________________________________ */
+
+/* top vid */
+.open-vid {
+  overflow: hidden;
+  height: 100vh;
+}
+
+.open-vid video {
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  z-index: -999;
+}
+
+.overlay {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  animation: open-pop 1s forwards 0.2s;
+}
+
+/* opening button rise animation */
+@keyframes open-pop {
+  0% {
+    opacity: 0;
+    transform: translateY(40em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(25em);
+  }
+}
+
+.overlay-text {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  text-decoration: none;
+  color: white;
+  padding: 3rem;
+  font-weight: 600;
+  border: solid white 5px;
+  text-align: center;
+  transition: 0.15s ease-in;
+}
+
+.overlay-text:hover {
+  border: solid white 10px;
+}
+
+.arrows {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -50;
+}
+
+.arrows span {
+  display: block;
+  border-bottom: white 4px solid;
+  border-right: white 4px solid;
+  width: 20px;
+  height: 20px;
+  margin: -10px;
+  transform: rotate(45deg);
+  animation: arrowMove 2s infinite;
+}
+
+.arrows span:nth-child(2) {
+  animation-delay: -0.2s;
+}
+
+.arrows span:nth-child(3) {
+  animation-delay: -0.4s;
+}
+
+@keyframes arrowMove {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) translate(-20px, -20px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(45deg) translate(20px, 20px);
+  }
+}
+
+/* ______________________________________________________________________ */
+
+.side-padding {
+  padding-left: 10%;
+  padding-right: 10%;
+  width: 80%;
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+/* ______________________________________________________________________ */
+/* Welcome section */
+.section1 {
+  background-color: #f5f2f2;
+}
+
+.section1 h3 {
+  text-align: center;
+}
+/* ______________________________________________________________________
+Attractions section */
+
+.section2 {
+  background-color: #ffffff;
+}
+
+/* TABS */
+.att-tabs-container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.att-tab {
+  cursor: pointer;
+  background-color: rgb(204, 204, 204);
+  padding: 1rem;
+  width: 30%;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* writing section for what-to-do */
+.att-info {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #f5f2f2;
+  display: none;
+  -webkit-box-shadow: 0 3px 70px #777;
+  -moz-box-shadow: 0 3px 70px #777;
+  box-shadow: 0 3px 70px #777;
+  width: 100%;
+  margin: auto;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.att-text-cont {
+  width: 100%;
+}
+.att-img-cont {
+  width: 100%;
+}
+
+.att-img-cont img {
+  width: 100%;
+}
+
+.active-content {
+  display: flex;
+  gap: 3rem;
+}
+
+.active-tab {
+  background-color: #f5f2f2;
+  color: rgb(18, 141, 7);
+}
+
+/* ______________________________________________________________________ */
+
+.section3 {
+  background-color: #f5f2f2;
+}
+
+.wtb-holder {
+  display: flex;
+  gap: 1rem;
+}
+
+.wtb-text {
+  /* background-color: slategray; */
+  width: 100%;
+}
+
+.wtb-photo {
+  width: 100%;
+  /* background-color: darkred; */
+  position: relative;
+  display: table;
+}
+
+.wtb-photo img {
+  width: 100%;
+}
+
+.holdPhotos {
+  position: relative;
+}
+
+.slideShowImage {
+  opacity: 0;
+  transition: 0.3s ease-in;
+}
+
+.dotHolder {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: auto;
+  bottom: 0px;
+}
+
+.photoDot {
+  border: 0.2px solid rgb(151, 151, 151);
+  cursor: pointer;
+  background-color: white;
+  height: 0.7rem;
+  width: 0.7rem;
+  margin: 0.7rem;
+  border-radius: 100%;
+}
+
+.photoDot:hover {
+  background-color: rgb(192, 192, 192);
+}
+
+.activeDot {
+  background-color: green;
+}
+
+.showPhoto {
+  opacity: 1;
+  transition: 0.3s ease-in;
+}
+
+#ssImage1 {
+  position: absolute;
+}
+
+/* ______________________________________________________________________ */
+
+footer {
+  background-color: white;
+  height: 15vh;
+  width: 100%;
+}
+
+/* ______________________________________________________________________ */
+
+@media screen and (min-width: 1150px) {
+  .side-padding {
+    padding-left: 25%;
+    padding-right: 25%;
+    width: 50%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .side-padding {
+    padding-left: 15%;
+    padding-right: 15%;
+    width: 70%;
+  }
+
+  /* display burger menu */
+  .burger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav-backdrop {
+    position: absolute;
+    top: 11vh;
+    height: 89vh;
+    width: 100%;
+    background-color: #f5f2f2;
+    display: none;
+  }
+
+  /* navigation backdrop fade in animation */
+  @keyframes nav-back-fade {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  /* JS toggle class - make nav backdrop visible */
+  .show-nav-fade {
+    display: block;
+    animation: nav-back-fade 0.35s forwards;
+  }
+
+  /* restyle navigation links - transform to columns and centre on page */
+  .nav-links {
+    margin-top: 0;
+    padding: 4rem;
+    position: absolute;
+    flex-direction: column;
+    top: 11.5vh;
+    width: 100%;
+    align-items: center;
+    line-height: 3rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: none;
+    opacity: 0;
+  }
+
+  /* JS toggle class - make nav links visible */
+  .show-nav-links {
+    display: flex;
+    animation: link-fade 0.5s forwards 0.2s;
+  }
+
+  /* JS toggle class - links animation  */
+  @keyframes link-fade {
+    0% {
+      opacity: 0;
+      margin-top: 4rem;
+    }
+    100% {
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  /* what-to-bring will transform from row to colum */
+  .wtb-holder {
+    flex-direction: column;
+  }
+
+  .side-padding {
+    padding-top: 15%;
+    padding-bottom: 15%;
+  }
+
+  /* attractions active content transformed to columns */
+  .active-content {
+    flex-direction: column;
+  }
+
+  .att-img-cont {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  a {
+    font-size: 0.7rem;
+  }
+
+  /* decrease text size and psoition higher on screen */
+  .overlay-text {
+    transform: translate(-50%, -70%);
+    font-size: 1.5rem;
+  }
+
+  /* padding around main scroll section will be decreased  */
+  .side-padding {
+    padding-left: 5%;
+    padding-right: 5%;
+    width: 90%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+
+  #title {
+    font-size: 1rem;
+  }
+
+  nav {
+    justify-content: space-evenly;
+  }
+}

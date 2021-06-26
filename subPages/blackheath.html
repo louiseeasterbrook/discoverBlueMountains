@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styleSheets/suburb-style.css" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap"
+      rel="stylesheet"
+    />
+    <!-- browser tab icon -->
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png" />
+    <title>Discover Blue Mountians</title>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <!-- page title  -->
+        <a id="title" href="/index.html">Discover Blue Mountains</a>
+
+        <!-- naviagtion backdrop - when page is 650px or less  -->
+        <div class="nav-backdrop"></div>
+
+        <!-- naviagtion links  -->
+        <ul class="nav-links">
+          <li><a href="wentworthFalls.html">Wentworth Falls</a></li>
+          <li><a href="leura.html">Leura</a></li>
+          <li><a href="katoomba.html">Katoomba</a></li>
+          <li><a href="blackheath.html">Blackheath</a></li>
+        </ul>
+
+        <!-- burger menu -->
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line2"></div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- OPENING VIDEO  -->
+    <div class="open-vid">
+      <video autoplay muted loop>
+        <source src="/videos/bhmain.mp4" />
+        <p>this page uses HTML5</p>
+      </video>
+
+      <!--Page heading -->
+      <div class="overlay">
+        <p class="overlay-text">Blackheath</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Section One  -->
+      <div class="section side-padding">
+        <!-- Section one text -->
+        <div class="section-info">
+          <h3>Govett's Leap Lookout</h3>
+          <p>
+            Govett’s Leap Lookout provides visitors with an incredible view of
+            the Grose Valley and is recognised as one of the most popular
+            lookouts in the Blue Mountains (after Echo Point). The lookout
+            showcases the tall cliffs and deep canyons of the Blue Mountains
+            National park. The lookout is equipped with picnic tables and is a
+            perfect spot for a lunch stop.<br /><br />This lookout is the
+            beginning of the Govett’s Leap Decent, which leads down to the base
+            of the 180m waterfall that can be observed from the lookout.<br />
+            <br />From the lookout, areas damaged from the 2019/2020 Australian
+            bushfires can be seen. <br /><br />
+            <b>Parking:</b> Car park available<br /><b>Toilet:</b> Available
+          </p>
+        </div>
+
+        <!-- section one media -->
+        <div class="section-media" id="s1">
+          <!-- media tabs -->
+          <div class="media-tabs">
+            <a class="tab-btn-s1 active-tab" id="image">Image</a>
+            <a class="tab-btn-s1" id="video">Video</a>
+          </div>
+          <!-- contianer for image and video -->
+          <div class="media-holder">
+            <img
+              src="/images/bh1.jpg"
+              alt="Govetts Leap Lookout View"
+              id="img-s1"
+            />
+            <video
+              class="hide"
+              id="video-s1"
+              poster="/images/bh1.jpg"
+              muted
+              controls
+            >
+              <source src="/videos/bh1v.mp4" />
+              <p>this page uses HTML5</p>
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Section Two  -->
+      <div class="section side-padding">
+        <!-- Section Two text -->
+        <div class="section-info">
+          <h3>Grand Canyon Track</h3>
+          <p>
+            The Grand Canyon walk starts at Evans lookout and loops down into
+            Grose Valley before returning back to the starting point. The walk
+            leads hikers down through a variety of different terrains, ranging
+            from the open Australian bush to dark dense areas of foliage by the
+            river bed.<br /><br />This walk is very scenic and is home to an
+            abundance of waterfalls and river crossings. The well-maintained
+            track facilitates easy movement through more dense and slippery
+            areas. The Australian bush is home to many Australian creatures that
+            can be spotted along the way with some luck.<br />
+            This walk will take an estimated three to four hours, so be prepared
+            with adequate food and water.<br /><br />
+            <b>Distance:</b> 5.4km Loop <br /><b>Parking:</b> Car park
+            available<br /><b>Toilet:</b> Not available
+          </p>
+        </div>
+
+        <!-- section Two media -->
+        <div class="section-media" id="s2">
+          <!-- media tabs -->
+          <div class="media-tabs">
+            <a class="tab-btn-s2 active-tab" id="image">Image</a>
+            <a class="tab-btn-s2" id="video">Video</a>
+          </div>
+          <!-- contianer for image and video -->
+          <div class="media-holder">
+            <img
+              src="/images/bh2.jpg"
+              alt="Grand Canyon Walking Track"
+              id="img-s2"
+            />
+            <video
+              class="hide"
+              id="video-s2"
+              poster="/images/bh2.jpg"
+              muted
+              controls
+            >
+              <source src="/videos/bh2v.mp4" />
+              <p>this page uses HTML5</p>
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer></footer>
+    <script src="/javascript/suburb-js.js"></script>
+  </body>
+</html>
