@@ -171,3 +171,20 @@ allSections.forEach(function (section) {
 });
 
 //________________________________________________________________________________
+//MAP
+
+var map = L.map("map").setView([-33.6809424, 150.3375979], 11);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
+
+//katoomba
+L.marker([-33.712109, 150.310754]).addTo(map).bindPopup("Katoomba");
+//blackheath
+L.marker([-33.6311, 150.2911]).addTo(map).bindPopup("Blackheath");
+//Leura
+L.marker([-33.711857, 150.330947]).addTo(map).bindPopup("Leura");
+//wentwroth falls
+L.marker([-33.709983, 150.375719]).addTo(map).bindPopup("Wentworth Falls");

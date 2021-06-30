@@ -10,6 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
     <!-- browser tab icon -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png">
+    <!-- map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""></script>
     <title>Discover Blue Mountians</title>
 </head>
 <body>
@@ -187,6 +194,15 @@
         </div>
 
       </div>         
+    </div>
+
+    <div class="section4 side-padding">
+      <div class="section">
+        <h3>Where are the Blue Mountains?</h3>
+        <p>The Blue Mountains National Park is located 80km west of the Sydney CDB. The park is accessable via car travel or public transport.</p>
+        <div id="map"></div>
+      </div>
+
     </div>
     
     <footer></footer>
