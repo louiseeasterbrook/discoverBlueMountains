@@ -36,7 +36,7 @@ a {
 
 /* class given to each section to make scroll transition smooth  */
 .slide-in {
-  transition: 0.3s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 /* ____________________________________________________________________________ */
@@ -124,6 +124,9 @@ nav {
   right: 0;
   left: 0;
   opacity: 0;
+}
+
+.overlay-animation {
   animation: open-pop 1s forwards 0.2s;
 }
 

@@ -115,6 +115,9 @@ nav {
   right: 0;
   left: 0;
   opacity: 0;
+}
+
+.overlay-sub-animation {
   animation: open-pop forwards 0.7s;
 }
 
