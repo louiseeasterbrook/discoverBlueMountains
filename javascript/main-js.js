@@ -4,7 +4,6 @@ const tabsCont = document.querySelector(".att-tabs-container");
 const tabs = document.querySelectorAll(".att-tab");
 const content = document.querySelectorAll(".att-info");
 const openingBtn = document.querySelector(".overlay");
-// const openingVideo = document.querySelector(".video-opening");
 const loading = document.querySelector(".loading");
 
 //turn off opening video load when page has loaded
@@ -29,6 +28,7 @@ tabsCont.addEventListener("click", function (e) {
 
 //____________________________________________________________________________________________
 
+//FUNCTION TRIGGERED ON PAGE LOAD
 function hideLoad() {
   //remove loading div
   loading.classList.add("hide");
