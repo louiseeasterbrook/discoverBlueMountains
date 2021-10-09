@@ -1,203 +1,212 @@
-const ready = function () {
-  // Attractions tab section
-  const tabsCont = document.querySelector(".att-tabs-container");
-  const tabs = document.querySelectorAll(".att-tab");
-  const content = document.querySelectorAll(".att-info");
-  const openingBtn = document.querySelector(".overlay");
+// const ready = function () {
+// Attractions tab section
+const tabsCont = document.querySelector(".att-tabs-container");
+const tabs = document.querySelectorAll(".att-tab");
+const content = document.querySelectorAll(".att-info");
+const openingBtn = document.querySelector(".overlay");
+// const openingVideo = document.querySelector(".video-opening");
+const loading = document.querySelector(".loading");
 
+//turn off opening video load when page has loaded
+window.addEventListener("load", hideLoad);
+
+tabsCont.addEventListener("click", function (e) {
+  clicked = e.target.closest(".att-tab");
+
+  //if not on button it return null
+  if (!clicked) return;
+
+  //remove active class from all elements
+  content.forEach((c) => c.classList.remove("active-content"));
+  tabs.forEach((t) => t.classList.remove("active-tab"));
+
+  //add active class to clicked elements
+  clicked.classList.add("active-tab");
+  document
+    .querySelector(`.att-${clicked.dataset.tab}`)
+    .classList.add("active-content");
+});
+
+//____________________________________________________________________________________________
+
+function hideLoad() {
+  //remove loading div
+  loading.classList.add("hide");
   //add animation to opening button
   setTimeout(() => {
     openingBtn.classList.add("overlay-animation");
   }, 300);
+}
 
-  tabsCont.addEventListener("click", function (e) {
-    clicked = e.target.closest(".att-tab");
+// ____________________________________________________________________________________________
 
-    //if not on button it return null
-    if (!clicked) return;
+const slideShowImage = document.querySelectorAll(".slideShowImage");
+const dotCont = document.querySelector(".dotHolder");
+const photoCont = document.querySelector(".holdPhotos");
 
-    //remove active class from all elements
-    content.forEach((c) => c.classList.remove("active-content"));
-    tabs.forEach((t) => t.classList.remove("active-tab"));
+const photo1 = document.getElementById("ssImage1");
+const photo2 = document.getElementById("ssImage2");
 
-    //add active class to clicked elements
-    clicked.classList.add("active-tab");
-    document
-      .querySelector(`.att-${clicked.dataset.tab}`)
-      .classList.add("active-content");
-  });
+photoArray = [
+  "images/slideshow0.jpg",
+  "images/slideshow1.jpg",
+  "images/slideshow2.jpg",
+  "images/slideshow3.jpg",
+  "images/slideshow4.jpg",
+  "images/slideshow5.jpeg",
+];
 
-  //____________________________________________________________________________________________
+count = 0;
 
-  // ____________________________________________________________________________________________
+//create dots corressponding the number of photos
+for (i = 0; i < photoArray.length; i++) {
+  const newDot = `<div class="photoDot" id="photoDot-${i}"></div>`;
+  dotCont.insertAdjacentHTML("beforeEnd", newDot);
+}
 
-  const slideShowImage = document.querySelectorAll(".slideShowImage");
-  const dotCont = document.querySelector(".dotHolder");
-  const photoCont = document.querySelector(".holdPhotos");
+const dot = document.querySelectorAll(".photoDot");
+//make the first dot the active dot
+document.getElementById(`photoDot-0`).classList.add("activeDot");
 
-  const photo1 = document.getElementById("ssImage1");
-  const photo2 = document.getElementById("ssImage2");
-
-  photoArray = [
-    "images/slideshow0.jpg",
-    "images/slideshow1.jpg",
-    "images/slideshow2.jpg",
-    "images/slideshow3.jpg",
-    "images/slideshow4.jpg",
-    "images/slideshow5.jpeg",
-  ];
-
-  count = 0;
-
-  //create dots corressponding the number of photos
-  for (i = 0; i < photoArray.length; i++) {
-    const newDot = `<div class="photoDot" id="photoDot-${i}"></div>`;
-    dotCont.insertAdjacentHTML("beforeEnd", newDot);
-  }
-
-  const dot = document.querySelectorAll(".photoDot");
-  //make the first dot the active dot
-  document.getElementById(`photoDot-0`).classList.add("activeDot");
-
-  slideShow();
-  // timer to change photos
-  function slideShow() {
-    slideShowTimer = setInterval(() => {
-      count++;
-      if (count == photoArray.length) {
-        count = 0;
-      }
-
-      changePhoto(count);
-    }, 2500);
-  }
-
-  //When photo dots are clicked
-  dotCont.addEventListener("click", function (e) {
-    //extract id from dot
-    dotNum = e.target.id;
-
-    //if no dot was clicked exit
-    if (!dotNum) return;
-
-    //get photo number
-    photoNum = dotNum.slice(-1);
-    count = photoNum;
+slideShow();
+// timer to change photos
+function slideShow() {
+  slideShowTimer = setInterval(() => {
+    count++;
+    if (count == photoArray.length) {
+      count = 0;
+    }
 
     changePhoto(count);
+  }, 2500);
+}
 
-    //restart the intervaltimer
-    clearInterval(slideShowTimer);
-    slideShow();
-  });
+//When photo dots are clicked
+dotCont.addEventListener("click", function (e) {
+  //extract id from dot
+  dotNum = e.target.id;
 
-  let oneTop = true;
-  //change the shown photo
-  function changePhoto(count) {
-    //dot change as photo transition completes
-    setTimeout(function () {
-      dot.forEach((d) => d.classList.remove("activeDot"));
-      document.getElementById(`photoDot-${count}`).classList.add("activeDot");
-    }, 200);
+  //if no dot was clicked exit
+  if (!dotNum) return;
 
-    //if photo one is on top photo two will be revealed
-    if (oneTop) {
-      photo2.src = photoArray[count];
-      photo1.classList.remove("showPhoto");
-      photo2.classList.add("showPhoto");
-      //varibale indicates photo1 is not being shown
-      oneTop = false;
-      //if photo one is not on top photo two will be revealed
-    } else {
-      photo1.src = photoArray[count];
-      photo2.classList.remove("showPhoto");
-      photo1.classList.add("showPhoto");
-      //varibale indicates photo1 is now being shown
-      oneTop = true;
-    }
+  //get photo number
+  photoNum = dotNum.slice(-1);
+  count = photoNum;
+
+  changePhoto(count);
+
+  //restart the intervaltimer
+  clearInterval(slideShowTimer);
+  slideShow();
+});
+
+let oneTop = true;
+//change the shown photo
+function changePhoto(count) {
+  //dot change as photo transition completes
+  setTimeout(function () {
+    dot.forEach((d) => d.classList.remove("activeDot"));
+    document.getElementById(`photoDot-${count}`).classList.add("activeDot");
+  }, 200);
+
+  //if photo one is on top photo two will be revealed
+  if (oneTop) {
+    photo2.src = photoArray[count];
+    photo1.classList.remove("showPhoto");
+    photo2.classList.add("showPhoto");
+    //varibale indicates photo1 is not being shown
+    oneTop = false;
+    //if photo one is not on top photo two will be revealed
+  } else {
+    photo1.src = photoArray[count];
+    photo2.classList.remove("showPhoto");
+    photo1.classList.add("showPhoto");
+    //varibale indicates photo1 is now being shown
+    oneTop = true;
   }
+}
 
-  // ____________________________________________________________________________________________
+// ____________________________________________________________________________________________
 
-  // NAVIGATION MENU
-  const burger = document.querySelector(".burger");
-  const background = document.querySelector(".nav-backdrop");
-  const links = document.querySelector(".nav-links");
-  const oneLink = document.querySelectorAll("top-link");
+// NAVIGATION MENU
+const burger = document.querySelector(".burger");
+const background = document.querySelector(".nav-backdrop");
+const links = document.querySelector(".nav-links");
+const oneLink = document.querySelectorAll("top-link");
 
-  burger.addEventListener("click", function () {
-    //toggle between show and hide of naviagtion menu
-    background.classList.toggle("show-nav-fade");
-    links.classList.toggle("show-nav-links");
+burger.addEventListener("click", function () {
+  //toggle between show and hide of naviagtion menu
+  background.classList.toggle("show-nav-fade");
+  links.classList.toggle("show-nav-links");
+});
+
+//_____________________________________________________________
+
+//AUTOMIC SCROLL TRIGGERED BY OPENING BUTTON
+
+const welcomeSect = document.getElementById("welcomeid");
+
+openingBtn.addEventListener("click", function (e) {
+  const welcomePos = welcomeSect.getBoundingClientRect();
+
+  //window scroll
+  window.scrollTo({
+    left: welcomePos.left,
+    top: welcomePos.top,
+    behavior: "smooth",
   });
+});
 
-  //_____________________________________________________________
+//______________________________________________________________
 
-  //AUTOMIC SCROLL TRIGGERED BY OPENING BUTTON
+//ELEMENT
+const allSections = document.querySelectorAll(".section");
 
-  const welcomeSect = document.getElementById("welcomeid");
+//FUNCTION
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  // console.log(entry);
 
-  openingBtn.addEventListener("click", function (e) {
-    const welcomePos = welcomeSect.getBoundingClientRect();
+  if (!entry.isIntersecting) return;
 
-    //window scroll
-    window.scrollTo({
-      left: welcomePos.left,
-      top: welcomePos.top,
-      behavior: "smooth",
-    });
-  });
-
-  //______________________________________________________________
-
-  //ELEMENT
-  const allSections = document.querySelectorAll(".section");
-
-  //FUNCTION
-  const revealSection = function (entries, observer) {
-    const [entry] = entries;
-    // console.log(entry);
-
-    if (!entry.isIntersecting) return;
-
-    //if section is intersection the 'section-hide' class with be removed and a transition class will be added
-    entry.target.classList.remove("section-hide");
-    entry.target.classList.add("slide-in");
-    observer.unobserve(entry.target);
-  };
-
-  //OBSERVER
-  const sectionObserver = new IntersectionObserver(revealSection, {
-    root: null,
-    threshold: 0.01,
-  });
-
-  //LINK
-  allSections.forEach(function (section) {
-    sectionObserver.observe(section);
-    //adds a class to hide all sections
-    section.classList.add("section-hide");
-  });
-
-  //________________________________________________________________________________
-  //MAP
-
-  var map = L.map("map").setView([-33.6809424, 150.3375979], 11);
-
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  }).addTo(map);
-
-  //katoomba
-  L.marker([-33.712109, 150.310754]).addTo(map).bindPopup("Katoomba");
-  //blackheath
-  L.marker([-33.6311, 150.2911]).addTo(map).bindPopup("Blackheath");
-  //Leura
-  L.marker([-33.711857, 150.330947]).addTo(map).bindPopup("Leura");
-  //wentwroth falls
-  L.marker([-33.709983, 150.375719]).addTo(map).bindPopup("Wentworth Falls");
+  //if section is intersection the 'section-hide' class with be removed and a transition class will be added
+  entry.target.classList.remove("section-hide");
+  entry.target.classList.add("slide-in");
+  observer.unobserve(entry.target);
 };
 
+//OBSERVER
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.01,
+});
+
+//LINK
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  //adds a class to hide all sections
+  section.classList.add("section-hide");
+});
+
+//________________________________________________________________________________
+//MAP
+
+var map = L.map("map").setView([-33.6809424, 150.3375979], 11);
+
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
+
+//katoomba
+L.marker([-33.712109, 150.310754]).addTo(map).bindPopup("Katoomba");
+//blackheath
+L.marker([-33.6311, 150.2911]).addTo(map).bindPopup("Blackheath");
+//Leura
+L.marker([-33.711857, 150.330947]).addTo(map).bindPopup("Leura");
+//wentwroth falls
+L.marker([-33.709983, 150.375719]).addTo(map).bindPopup("Wentworth Falls");
+// };
+
 //trigger all javascript after HTML has loaded
-window.addEventListener("load", ready);
+// window.addEventListener("load", ready);
