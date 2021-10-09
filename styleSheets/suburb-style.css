@@ -110,6 +110,43 @@ nav {
   z-index: -999;
 }
 
+.loading {
+  position: absolute;
+  width: 100%;
+  height: 55vh;
+  background-color: rgb(235, 235, 235);
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-ball {
+  width: 5%;
+  height: 5%;
+  min-height: 25px;
+  max-height: 35px;
+  background-color: rgb(51, 83, 18);
+  animation: loading-move 0.5s infinite;
+  border-radius: 20px;
+}
+
+@keyframes loading-move {
+  0% {
+    width: 5%;
+  }
+  50% {
+    width: 10%;
+  }
+  100% {
+    width: 5%;
+  }
+}
+
+.hide {
+  display: none;
+}
+
 .overlay {
   top: 0;
   bottom: 0;

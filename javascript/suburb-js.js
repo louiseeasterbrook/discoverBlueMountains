@@ -1,3 +1,15 @@
+//PAGE LOADING ANIMATION
+const loading = document.querySelector(".loading");
+
+//turn off opening video load when page has loaded
+window.addEventListener("load", hideLoad);
+
+function hideLoad() {
+  //remove loading div
+  loading.classList.add("hide");
+}
+
+//_______________________________________________________________
 //MEDIA SECTION
 const tabsCont = document.querySelectorAll(".media-tabs");
 
