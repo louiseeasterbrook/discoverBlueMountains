@@ -126,7 +126,7 @@ nav {
   height: 5%;
   min-height: 25px;
   max-height: 35px;
-  background-color: rgb(51, 83, 18);
+  background-color: rgb(53, 163, 31);
   animation: loading-move 0.5s infinite;
   border-radius: 20px;
 }
