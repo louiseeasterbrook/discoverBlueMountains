@@ -1,4 +1,3 @@
-// const ready = function () {
 // Attractions tab section
 const tabsCont = document.querySelector(".att-tabs-container");
 const tabs = document.querySelectorAll(".att-tab");
@@ -40,50 +39,53 @@ function hideLoad() {
 }
 
 // ____________________________________________________________________________________________
+//SLIDE SHOW
 
-const slideShowImage = document.querySelectorAll(".slideShowImage");
 const dotCont = document.querySelector(".dotHolder");
-const photoCont = document.querySelector(".holdPhotos");
+const slideShowImage = document.querySelectorAll(".slideShowImage");
+let current = 0;
+let slideShowTimer;
 
-const photo1 = document.getElementById("ssImage1");
-const photo2 = document.getElementById("ssImage2");
-
-photoArray = [
-  "images/slideshow0.jpg",
-  "images/slideshow1.jpg",
-  "images/slideshow2.jpg",
-  "images/slideshow3.jpg",
-  "images/slideshow4.jpg",
-  "images/slideshow5.jpeg",
-];
-
-count = 0;
-
-//create dots corressponding the number of photos
-for (i = 0; i < photoArray.length; i++) {
+//create dots
+for (i = 0; i < slideShowImage.length; i++) {
   const newDot = `<div class="photoDot" id="photoDot-${i}"></div>`;
   dotCont.insertAdjacentHTML("beforeEnd", newDot);
 }
-
+//select dots
 const dot = document.querySelectorAll(".photoDot");
-//make the first dot the active dot
+// //make the first dot the active dot
 document.getElementById(`photoDot-0`).classList.add("activeDot");
+//When photo dots are clicked
+dotCont.addEventListener("click", dotClicked);
 
+//call slideshow to start
 slideShow();
-// timer to change photos
-function slideShow() {
-  slideShowTimer = setInterval(() => {
-    count++;
-    if (count == photoArray.length) {
-      count = 0;
-    }
 
-    changePhoto(count);
-  }, 2500);
+//slideshow Timer
+function slideShow() {
+  slideShowTimer = setInterval(function () {
+    //change current to following image index
+    current = current != slideShowImage.length - 1 ? current + 1 : 0;
+    changeImage(current);
+  }, 3000);
 }
 
-//When photo dots are clicked
-dotCont.addEventListener("click", function (e) {
+//change image function
+function changeImage(current) {
+  //make all images disapear
+  for (let i = 0; i < slideShowImage.length; i++) {
+    slideShowImage[i].style.opacity = 0;
+  }
+  //show current imahe
+  slideShowImage[current].style.opacity = 1;
+  //make all dots white
+  dot.forEach((d) => d.classList.remove("activeDot"));
+  //make current dot green
+  document.getElementById(`photoDot-${current}`).classList.add("activeDot");
+}
+
+//triggered by dot click
+function dotClicked(e) {
   //extract id from dot
   dotNum = e.target.id;
 
@@ -92,40 +94,28 @@ dotCont.addEventListener("click", function (e) {
 
   //get photo number
   photoNum = dotNum.slice(-1);
-  count = photoNum;
+  current = Number(photoNum);
 
-  changePhoto(count);
+  //change image
+  changeImage(current);
 
-  //restart the intervaltimer
+  // restart the intervaltimer
   clearInterval(slideShowTimer);
   slideShow();
-});
-
-let oneTop = true;
-//change the shown photo
-function changePhoto(count) {
-  //dot change as photo transition completes
-  setTimeout(function () {
-    dot.forEach((d) => d.classList.remove("activeDot"));
-    document.getElementById(`photoDot-${count}`).classList.add("activeDot");
-  }, 200);
-
-  //if photo one is on top photo two will be revealed
-  if (oneTop) {
-    photo2.src = photoArray[count];
-    photo1.classList.remove("showPhoto");
-    photo2.classList.add("showPhoto");
-    //varibale indicates photo1 is not being shown
-    oneTop = false;
-    //if photo one is not on top photo two will be revealed
-  } else {
-    photo1.src = photoArray[count];
-    photo2.classList.remove("showPhoto");
-    photo1.classList.add("showPhoto");
-    //varibale indicates photo1 is now being shown
-    oneTop = true;
-  }
 }
+
+//'holdPhotos' sizing is set by image size
+//reset everytime window is re-sized
+window.addEventListener(
+  "resize",
+  function (event) {
+    const ssImage = document.querySelector(".slideShowImage");
+    const hold = document.querySelector(".holdPhotos");
+    var objHeight = ssImage.height;
+    hold.style.height = objHeight + "px";
+  },
+  true
+);
 
 // ____________________________________________________________________________________________
 
@@ -159,6 +149,7 @@ openingBtn.addEventListener("click", function (e) {
 });
 
 //______________________________________________________________
+//FADE IN ON SCROLL
 
 //ELEMENT
 const allSections = document.querySelectorAll(".section");
@@ -207,7 +198,3 @@ L.marker([-33.6311, 150.2911]).addTo(map).bindPopup("Blackheath");
 L.marker([-33.711857, 150.330947]).addTo(map).bindPopup("Leura");
 //wentwroth falls
 L.marker([-33.709983, 150.375719]).addTo(map).bindPopup("Wentworth Falls");
-// };
-
-//trigger all javascript after HTML has loaded
-// window.addEventListener("load", ready);

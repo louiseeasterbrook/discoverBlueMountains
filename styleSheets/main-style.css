@@ -49,6 +49,7 @@ nav {
   justify-content: space-around;
   align-items: center;
   height: 11vh;
+  min-height: 70px;
   background-color: white;
   position: fixed;
   width: 100%;
@@ -349,17 +350,15 @@ Attractions section */
 }
 
 .slideShowImage {
-  opacity: 0;
+  position: absolute;
   transition: 0.3s ease-in;
 }
 
 .dotHolder {
-  display: inline-block;
   display: flex;
   justify-content: center;
   width: 100%;
   margin: auto;
-  bottom: 0px;
 }
 
 .photoDot {
