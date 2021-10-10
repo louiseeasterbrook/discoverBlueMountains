@@ -67,7 +67,7 @@ function slideShow() {
     //change current to following image index
     current = current != slideShowImage.length - 1 ? current + 1 : 0;
     changeImage(current);
-  }, 3000);
+  }, 5000);
 }
 
 //change image function
