@@ -7,7 +7,7 @@ video.addEventListener("loadeddata", hideLoad);
 
 function hideLoad() {
   //remove loading div
-  loading.classList.add("hide");
+  loading.classList.add("hide-load");
 }
 
 //_______________________________________________________________

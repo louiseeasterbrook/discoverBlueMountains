@@ -32,7 +32,7 @@ tabsCont.addEventListener("click", function (e) {
 //FUNCTION TRIGGERED ON PAGE LOAD
 function hideLoad() {
   //remove loading div
-  loading.classList.add("hide");
+  loading.classList.add("hide-load");
   //add animation to opening button
   setTimeout(() => {
     openingBtn.classList.add("overlay-animation");
