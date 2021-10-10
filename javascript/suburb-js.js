@@ -1,8 +1,9 @@
 //PAGE LOADING ANIMATION
 const loading = document.querySelector(".loading");
+const video = document.querySelector(".open-vid");
 
 //turn off opening video load when page has loaded
-window.addEventListener("load", hideLoad);
+video.addEventListener("loadeddata", hideLoad);
 
 function hideLoad() {
   //remove loading div

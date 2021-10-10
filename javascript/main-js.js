@@ -5,9 +5,10 @@ const tabs = document.querySelectorAll(".att-tab");
 const content = document.querySelectorAll(".att-info");
 const openingBtn = document.querySelector(".overlay");
 const loading = document.querySelector(".loading");
+const video = document.querySelector("#open-vid");
 
 //turn off opening video load when page has loaded
-window.addEventListener("load", hideLoad);
+video.addEventListener("loadeddata", hideLoad);
 
 tabsCont.addEventListener("click", function (e) {
   clicked = e.target.closest(".att-tab");
@@ -35,7 +36,7 @@ function hideLoad() {
   //add animation to opening button
   setTimeout(() => {
     openingBtn.classList.add("overlay-animation");
-  }, 300);
+  }, 200);
 }
 
 // ____________________________________________________________________________________________

@@ -92,7 +92,7 @@ nav {
 /* ______________________________________________________________________ */
 
 /* top vid */
-.open-vid {
+.open-vid-div {
   margin-top: 11vh;
   overflow: hidden;
   height: 55vh;
@@ -102,7 +102,7 @@ nav {
   margin-top: -18rem;
 }
 
-.open-vid video {
+.open-vid-div video {
   left: 0;
   min-width: 100%;
   min-height: 100%;
@@ -122,10 +122,8 @@ nav {
 }
 
 .loading-ball {
-  width: 5%;
-  height: 5%;
-  min-height: 25px;
-  max-height: 35px;
+  width: 40px;
+  height: 30px;
   background-color: rgb(53, 163, 31);
   animation: loading-move 0.5s infinite;
   border-radius: 20px;
@@ -133,13 +131,13 @@ nav {
 
 @keyframes loading-move {
   0% {
-    width: 5%;
+    width: 40px;
   }
   50% {
-    width: 10%;
+    width: 90px;
   }
   100% {
-    width: 5%;
+    width: 40px;
   }
 }
 
