@@ -407,8 +407,15 @@ Attractions section */
 
 footer {
   background-color: #f5f2f2;
-  height: 15vh;
+  height: 18vh;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  color: rgb(148, 148, 148);
 }
 
 /* ______________________________________________________________________ */

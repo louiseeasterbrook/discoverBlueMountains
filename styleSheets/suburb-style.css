@@ -194,6 +194,7 @@ nav {
 .section {
   display: flex;
   gap: 2rem;
+  background-color: white;
 }
 
 .section-info {
@@ -259,8 +260,15 @@ nav {
 
 footer {
   background-color: #f5f2f2;
-  height: 200px;
+  height: 18vh;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer p {
+  color: rgb(148, 148, 148);
 }
 
 /* ______________________________________________________________________ */
